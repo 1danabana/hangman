@@ -49,12 +49,13 @@ function checkletters(letter){
             isLetterInWord = true;
         }
     }
-    //check where the word letter exsts in the blankandsuccesses array'
+    //check where the word letter exsts in the blankandsuccesses array and populate the blank spaces
+
     if (isLetterInWord){
 
         for(var i=0; i<numBlanks; i++){
-            if(selectedWord[i] = letter) {
-                blanksAndSuccesses[i] == letter;
+            if(selectedWord[i] == letter) {
+                blanksAndSuccesses[i] = letter;
             }
         }
     }
@@ -65,6 +66,16 @@ function checkletters(letter){
     }
     console.log(blanksAndSuccesses)
     
+
+}
+// check if user lost or if the round is over
+function roundComplete(){
+    console.log(winCount|lossCount|guessesLeft)
+    //did the user lose
+    if (lettersinWord.toString() == blanksAndSuccesses.toString()){
+        winCount++;
+        alert("huzzah")
+    }
 }
 // start processs
 startGame();
