@@ -41,6 +41,7 @@ function startGame() {
     console.log(numBlanks)
     console.log(blanksAndSuccesses)
 }
+// is the letter in the word
 function checkletters(letter){
     var isLetterInWord = false
     for(var i=0; i<numBlanks; i++){
@@ -72,6 +73,6 @@ startGame();
 
 document.onkeyup = function (event){
     var letterGuessed= String.fromCharCode(event.keyCode).toLowerCase();
-
+    checkletters(letterGuessed);
 }
 
